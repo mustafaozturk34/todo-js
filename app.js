@@ -84,7 +84,6 @@ function addTodo(e) {
 
     todos.forEach((todo) => {
         if(todo.toLowerCase() === newTodo.toLowerCase()) {
-            console.log("aynıla bu")
             isSame = true;
         }
     })
@@ -93,9 +92,11 @@ function addTodo(e) {
     }else if(isSame) {
         showAlert("danger", "This todo is already on your list.");
     }else if(todos.length > 9) {
-        console.log(todos.length)
         showAlert("danger", "You can add a maximum of 10 todos.");
-    }else {
+    }else if(newTodo.length > 26) {
+        showAlert("danger", "You can add a todo with a maximum of 26 characters.");
+    } 
+    else {
         addTodoToUI(newTodo);
         addTodosFromStorage(newTodo);
         showAlert("success", "todo has been successfully added.")
