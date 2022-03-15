@@ -7,23 +7,20 @@ const todosSide = document.querySelector("#todos-side");
 const addButton = document.querySelector("#add");
 
 
-
 eventListener();
 
 function eventListener(e) {
-    addButton.addEventListener("click", addTodo);
+    form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", loadAllTodosToUi);
     todoList.addEventListener("click", crudTodo);
     search.addEventListener("keyup", searchTodos);
     clearButton.addEventListener("click", clearAllTodos);
 }
 
-function clearAllTodos() {
+function clearAllTodos(e) {
     if(confirm("Are you sure you want to delete all todos?")) {
-        while(todoList.secondElementChild != null) {
-            todoList.removeChild(todoList.secondElementChild);
-        }
         localStorage.removeItem("todos");
+        todoList.innerHTML = "";
     }
 }
 
@@ -101,8 +98,6 @@ function addTodo(e) {
         addTodosFromStorage(newTodo);
         showAlert("success", "todo has been successfully added.")
     }
-
-
     e.preventDefault();
 }
 
@@ -132,12 +127,9 @@ function showAlert(type, message,e) {
 
     todosSide.insertBefore(alert, todosSide.firstChild);
 
-
     setTimeout(function() {
         alert.remove();
     }, 2000)
-
-
 }
 
 function addTodoToUI(newTodo) {

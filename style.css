@@ -21,7 +21,7 @@ body {
 }
 
 
-#todos {
+.papirus {
     background-image: url(./images/todos.png);
     background-repeat: no-repeat, repeat;
     background-position: center;
@@ -116,7 +116,7 @@ body {
         justify-content: center;
         align-items:center;
     }
-    #todos {
+    .papirus {
         width: 90vw;
         height: 70vh;
         background-size: cover;
