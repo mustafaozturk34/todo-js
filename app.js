@@ -127,7 +127,7 @@ function addTodosFromStorage(newTodo) {
 
 function showAlert(type, message,e) {
     const alert = document.createElement("div");
-    alert.className = `alert alert-${type}`;
+    alert.className = `alert alert-${type} alert-message`;
     alert.textContent = message;
 
     todosSide.insertBefore(alert, todosSide.firstChild);

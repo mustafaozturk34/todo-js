@@ -32,6 +32,10 @@ body {
     padding: 60px;
 }
 
+#todos-side h2 {
+    text-align: center;
+}
+
 #todos li {
     word-break: break-word;
     list-style-type: none; 
@@ -54,6 +58,12 @@ body {
     margin-right: 5px;
     cursor: pointer;
 
+}
+
+.alert-message {
+    position: absolute;
+    width: 400px;
+    top:10px;
 }
 
 #add:hover {
@@ -99,5 +109,30 @@ body {
 @media(max-width: 920px) {
     .img-class {
         display: none;
+    }
+    #todos-side {
+        width: 90vw;
+        height: 90vh;
+        justify-content: center;
+        align-items:center;
+    }
+    #todos {
+        width: 90vw;
+        height: 70vh;
+        background-size: cover;
+        padding: 80px 30px 30px 40px;
+    }
+
+    #todos li {
+        margin-top: 15px;
+    }
+
+    .buttons button {
+        width: 50%;
+    }
+
+    .alert-message {
+        position: absolute;
+        width: 90vw;
     }
 }
