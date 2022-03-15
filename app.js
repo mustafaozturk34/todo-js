@@ -20,8 +20,8 @@ function eventListener(e) {
 
 function clearAllTodos() {
     if(confirm("Are you sure you want to delete all todos?")) {
-        while(todoList.firstElementChild != null) {
-            todoList.removeChild(todoList.firstElementChild);
+        while(todoList.secondElementChild != null) {
+            todoList.removeChild(todoList.secondElementChild);
         }
         localStorage.removeItem("todos");
     }
